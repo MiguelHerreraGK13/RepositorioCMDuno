@@ -4,6 +4,14 @@ import { usuario } from "../../../model/modelUsuarios.js";
 
 console.log(usuario);
 
+usuario.map((index)=>{
+    console.log(index);
+})
+
+
+document.getElementById('btnLoggin').addEventListener('click',loggin)
+
+
 
 function loggin(){   
     let usuario = document.querySelector('#usuario').value
