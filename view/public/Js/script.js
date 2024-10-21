@@ -1,42 +1,22 @@
 /*document.getElementById('')*/
 
-import { usuario } from "../../../model/modelUsuarios.js";
-
-console.log(usuario);
-
-usuario.map((index)=>{
-    console.log(index);
-})
-
+import { buscarUsuario } from "/controller/controllerUsuario.js";
 
 document.getElementById('btnLoggin').addEventListener('click',loggin)
-
-
-
-function loggin(){   
-    let usuario = document.querySelector('#usuario').value
-    let contrasena = document.querySelector('#contraseña').value
-    if (usuario=='admin' && contrasena=='54321') {
-        console.log('esta correto!');
-        
+    function loggin(){ 
+        if (buscarUsuario()) {
+            window.location.href = '/view/page/home.html'  //redireccion a home con ruta absoluta o relativa, depende del servidor
+        }else{
+            console.log("error de credenciales");            
+        }       
     }
-    else{
-        console.log('usuario o contraseña no coinciden');
-        
-    }
-    
     
     // console.log("iniciar Sesion");
     // console.log(usuario);
     // console.log(contrasena);
     // console.log(loggin);
-    
-    
-    
-
-}
-
-/*funcion de espresion*/
+ 
+/*funcion de expresion*/
 /*sintaxis*/
 /*let loggin=function(){
     let usuario = document.querySelector('#usuario');
