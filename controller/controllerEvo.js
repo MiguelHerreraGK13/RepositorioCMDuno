@@ -45,13 +45,16 @@ export function listarRecetasNoVegetarianas() {
 })
 }
 
-function FiltarPorNombre(params) {
+export function FiltarPorNombre(value) {
+    let recetas = recetasVegetarianas.filter((recetavegetariana)=>recetasVegetarianas.nombre==value)
+    console.log(recetas)
+    
     
 }
 
-function FiltrarPorTipo() {
+export function FiltrarPorTipo() {
     
 }
-function FiltrarPorDificultad() {
+export function FiltrarPorDificultad() {
     
 }

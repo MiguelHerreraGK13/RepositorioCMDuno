@@ -1,7 +1,7 @@
 /*document.getElementById('')*/
 
 import { buscarUsuario } from "/controller/controllerUsuario.js";
-import { listarRecetasNoVegetarianas, listarRecetasVegetarianas, } from "../../../controller/controllerEvo.js";
+import { listarRecetasNoVegetarianas, listarRecetasVegetarianas, FiltarPorNombre,FiltrarPorDificultad,FiltrarPorTipo } from "../../../controller/controllerEvo.js";
 
 
 let btnIniciar=document.getElementById('btnLoggin')
@@ -42,8 +42,18 @@ if (cerrarSesion) {
 
     let inputs = document.querySelectorAll('form input')
     inputs.forEach((input)=>{
-        input.addEventListener('change',()=>{
-                
+        input.addEventListener('keyup',(e)=>{
+            switch (e.target.name) {
+                    case 'nombre':
+                    FiltarPorNombre(e.target.value)
+                    break;
+                    case 'dificultad':
+                    FiltrarPorDificultad()
+                    break;
+                    case 'tipoRecerta':
+                    FiltrarPorTipo()
+                    break;
+            } 
         })
     }) //se acostumbra que se haga en singular el parametro de la funcion
 
