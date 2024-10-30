@@ -23,11 +23,14 @@
     <main>
         <div>
             <nav>
-                <button>Fitrar por Nombre</button>
-                <button>Fitrar por Dificultad</button>
-                <button>Fitrar por Tipo</button>
+                <form action="">
+                    <input placeholder="Nombre Receta" id="nombre"  type="text">
+                    <input placeholder="dificultad Receta" id="dificultad" type="text">
+                    <input placeholder="Tipo Receta" id="tipoRecerta" type="text">
+                    <button type="button" id="buttonFiltrar">Fitrar</button>
+            </form>
             </nav>
-            <h1>Evolution</h1>
+            <h1>Evolution</h1><h1></h1>
             <section id="contenido" class="cards">
 
             </section>
@@ -35,5 +38,7 @@
         </main>
     
     <script type="module" src="../public/Js/script.js"></script>
+    <!-- adicionar scrip de contollerEvo.js -->
+    
 </body>
 </html>

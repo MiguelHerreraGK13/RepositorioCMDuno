@@ -1,7 +1,7 @@
 /*document.getElementById('')*/
 
 import { buscarUsuario } from "/controller/controllerUsuario.js";
-import { listarRecetasNoVegetarianas, listarRecetasVegetarianas } from "../../../controller/controllerEvo.js";
+import { listarRecetasNoVegetarianas, listarRecetasVegetarianas, } from "../../../controller/controllerEvo.js";
 
 
 let btnIniciar=document.getElementById('btnLoggin')
@@ -13,36 +13,53 @@ if (btnIniciar) {
             window.location.href = '/view/page/home.html'  //redireccion a home con ruta absoluta o relativa, depende del servidor
         }else{
             console.log("error de credenciales");            
+        
+        
         }       
     }    
 }
-
-document.getElementById('evo1').addEventListener('click',()=>{
+let evo1=document.getElementById('evo1')
+if (evo1){
+    evo1.addEventListener('click',()=>{
     
-    listarRecetasVegetarianas()
-})
-document.getElementById('evo2').addEventListener('click',()=>{
-    
-    listarRecetasNoVegetarianas()
-})
-document.getElementById('cerrarSesion').addEventListener('click',()=>{
-    Window.location.href= '/index.html'
-})
+        listarRecetasVegetarianas()
+    })
+} 
+
+let evo2=document.getElementById('evo2')
+if (evo2) {
+    evo2.addEventListener('click',()=>{
+        listarRecetasNoVegetarianas()
+    })
+} 
+
+let cerrarSesion=document.getElementById('cerrarSesion')
+if (cerrarSesion) {
+    cerrarSesion.addEventListener('click',()=>{
+        Window.location.href= '/index.html'
+    })
+}
+
+    let inputs = document.querySelectorAll('form input')
+    inputs.forEach((input)=>{
+        input.addEventListener('change',()=>{
+                
+        })
+    }) //se acostumbra que se haga en singular el parametro de la funcion
 
 
-    
-    // console.log("iniciar Sesion");
-    // console.log(usuario);
-    // console.log(contrasena);
-    // console.log(loggin);
- 
+// console.log("iniciar Sesion");
+// console.log(usuario);
+// console.log(contrasena);
+// console.log(loggin);
+
 /*funcion de expresion*/
 /*sintaxis*/
 /*let loggin=function(){
-    let usuario = document.querySelector('#usuario');
-    let contrasena= document.querySelector('#contraseña');
+let usuario = document.querySelector('#usuario');
+let contrasena= document.querySelector('#contraseña');
 
-    console.log("iniciar Sesion");
+console.log("iniciar Sesion");
 }*/
 
 

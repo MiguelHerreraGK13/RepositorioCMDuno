@@ -45,3 +45,13 @@ export function listarRecetasNoVegetarianas() {
 })
 }
 
+function FiltarPorNombre(params) {
+    
+}
+
+function FiltrarPorTipo() {
+    
+}
+function FiltrarPorDificultad() {
+    
+}
