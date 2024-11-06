@@ -48,10 +48,10 @@ if (cerrarSesion) {
                     FiltarPorNombre(e.target.value)
                     break;
                     case 'dificultad':
-                    FiltrarPorDificultad()
+                    FiltrarPorDificultad(e.target.value)
                     break;
                     case 'tipoRecerta':
-                    FiltrarPorTipo()
+                    FiltrarPorTipo(e.target.value)
                     break;
             } 
         })

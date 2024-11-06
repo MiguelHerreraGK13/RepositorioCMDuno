@@ -14,11 +14,11 @@ export function listarRecetasVegetarianas() {
         let dificultad=document.createElement('p')
         let tipoComida=document.createElement('p')
 
-        nombre.textContent= "nombre"+ recetasVegetarianas.nombre
-        ingredientes.textContent= "ingredientes" + recetasVegetarianas.ingredientes
-        tiempoPreparacion.textContent= "tiempoPreparacion" + recetasVegetarianas.tiempoPreparacion
-        dificultad.textContent= "dificultad" +recetasVegetarianas.dificultad
-        tipoComida.textContent= "tipoComida" + recetasVegetarianas.tipoComida
+        nombre.textContent= "nombre"+ recetavegetariana.nombre
+        ingredientes.textContent= "ingredientes" + recetavegetariana.ingredientes
+        tiempoPreparacion.textContent= "tiempoPreparacion" + recetavegetariana.tiempoPreparacion
+        dificultad.textContent= "dificultad" +recetavegetariana.dificultad
+        tipoComida.textContent= "tipoComida" + recetavegetariana.tipoComida
         
         contenedor.append(nombre,ingredientes,tiempoPreparacion,dificultad,tipoComida)
         document.getElementById('contenido').append(contenedor)
@@ -37,24 +37,98 @@ export function listarRecetasNoVegetarianas() {
         contenedor.append(nombre,ingredientes,tiempoPreparacion,dificultad,tipoComida)
         document.getElementById('contenido').append(contenedor)
 
-        nombre.textContent= "nombre"+ recetasNoVegetarianas.nombre
-        ingredientes.textContent= "ingredientes" + recetasNoVegetarianas.ingredientes
-        tiempoPreparacion.textContent= "tiempoPreparacion" + recetasNoVegetarianas.tiempoPreparacion
-        dificultad.textContent= "dificultad" +recetasNoVegetarianas.dificultad
-        tipoComida.textContent= "tipoComida" + recetasNoVegetarianas.tipoComida
+        nombre.textContent= "nombre"+ recetaNoVegetariana.nombre
+        ingredientes.textContent= "ingredientes" + recetaNoVegetariana.ingredientes
+        tiempoPreparacion.textContent= "tiempoPreparacion" + recetaNoVegetariana.tiempoPreparacion
+        dificultad.textContent= "dificultad" +recetaNoVegetariana.dificultad
+        tipoComida.textContent= "tipoComida" + recetaNoVegetariana.tipoComida
 })
 }
 
 export function FiltarPorNombre(value) {
-    let recetas = recetasVegetarianas.filter((recetavegetariana)=>recetasVegetarianas.nombre==value)
+    let recetas = recetasVegetarianas.filter((recetavegetariana)=>recetavegetariana.nombre==value)
     console.log(recetas)
-    
+    crearRecetasPorNombre(recetas)
     
 }
 
-export function FiltrarPorTipo() {
+function crearRecetasPorNombre(recetas) {
+    document.getElementById('contenido').innerHTML=" "
+
+    recetas.map((recetavegetariana)=>{
+        let contenedor=document.createElement('div')
+        let nombre=document.createElement('p')
+        let ingredientes=document.createElement('ul')
+        let tiempoPreparacion=document.createElement('p')
+        let dificultad=document.createElement('p')
+        let tipoComida=document.createElement('p')
+
+        nombre.textContent= "nombre"+ recetavegetariana.nombre
+        ingredientes.textContent= "ingredientes" + recetavegetariana.ingredientes
+        tiempoPreparacion.textContent= "tiempoPreparacion" + recetavegetariana.tiempoPreparacion
+        dificultad.textContent= "dificultad" +recetavegetariana.dificultad
+        tipoComida.textContent= "tipoComida" + recetavegetariana.tipoComida
+        
+        contenedor.append(nombre,ingredientes,tiempoPreparacion,dificultad,tipoComida)
+        document.getElementById('contenido').append(contenedor)
+
+    })    
+}
+
+export function FiltrarPorTipo(value) {
+    let recetas = recetasVegetarianas.filter((recetavegetariana)=>recetavegetariana.tipoComida==value)
+    console.log(recetas)
+    crearRecetasPortipo(recetas)
     
 }
-export function FiltrarPorDificultad() {
-    
+
+function crearRecetasPortipo(recetas) {
+    document.getElementById('contenido').innerHTML=" "
+
+    recetas.map((recetavegetariana)=>{
+        let contenedor=document.createElement('div')
+        let nombre=document.createElement('p')
+        let ingredientes=document.createElement('ul')
+        let tiempoPreparacion=document.createElement('p')
+        let dificultad=document.createElement('p')
+        let tipoComida=document.createElement('p')
+
+        nombre.textContent= "nombre"+ recetavegetariana.nombre
+        ingredientes.textContent= "ingredientes" + recetavegetariana.ingredientes
+        tiempoPreparacion.textContent= "tiempoPreparacion" + recetavegetariana.tiempoPreparacion
+        dificultad.textContent= "dificultad" +recetavegetariana.dificultad
+        tipoComida.textContent= "tipoComida" + recetavegetariana.tipoComida
+        
+        contenedor.append(nombre,ingredientes,tiempoPreparacion,dificultad,tipoComida)
+        document.getElementById('contenido').append(contenedor)
+
+    })    
+}
+export function FiltrarPorDificultad(value) {
+    let recetas = recetasVegetarianas.filter((recetavegetariana)=>recetavegetariana.dificultad==value)
+    console.log(recetas)
+    crearRecetasPorDificultad(recetas)
+}
+
+function crearRecetasPorDificultad(recetas) {
+    document.getElementById('contenido').innerHTML=" "
+
+    recetas.map((recetavegetariana)=>{
+        let contenedor=document.createElement('div')
+        let nombre=document.createElement('p')
+        let ingredientes=document.createElement('ul')
+        let tiempoPreparacion=document.createElement('p')
+        let dificultad=document.createElement('p')
+        let tipoComida=document.createElement('p')
+
+        nombre.textContent= "nombre"+ recetavegetariana.nombre
+        ingredientes.textContent= "ingredientes" + recetavegetariana.ingredientes
+        tiempoPreparacion.textContent= "tiempoPreparacion" + recetavegetariana.tiempoPreparacion
+        dificultad.textContent= "dificultad" +recetavegetariana.dificultad
+        tipoComida.textContent= "tipoComida" + recetavegetariana.tipoComida
+        
+        contenedor.append(nombre,ingredientes,tiempoPreparacion,dificultad,tipoComida)
+        document.getElementById('contenido').append(contenedor)
+
+    })    
 }
